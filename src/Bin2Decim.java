@@ -24,10 +24,6 @@ public class Bin2Decim {
             if (chars[i]=='1') {
                 result += mult;
             }
-            if (chars[i]=='-') //Проверка на отрицательное значение
-            {
-                result *= (-1);
-            }
             mult*=2;
         }
         return result;
