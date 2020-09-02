@@ -9,14 +9,17 @@ import java.util.Scanner;
  */
 public class BubbleSort {
     public static void main(String[] args) {
+        // получаем данные от пользователя
         System.out.println("Введите числа массива");
         System.out.println("Внимание! Чтобы остановить ввод, необходимо ввести любой символ, отличный от цифры");
         Scanner in1 = new Scanner(System.in);
         ArrayList <Integer> arrayList1 = new ArrayList<Integer>();
+        // дополняем массив, пока приходят числа
         while (in1.hasNextInt()) {
             int x = in1.nextInt();
             arrayList1.add(x);
         }
+        // Сортировка методом пузырька
         for (int i = arrayList1.size() -1; i >= 0; i--)
         {
             for (int j = 0; j < i; j++)
@@ -29,6 +32,7 @@ public class BubbleSort {
                 }
             }
         }
+        // Выводим на экран отсортированный массив
         System.out.println("Отсортированный массив:");
         for (int index = 0; index < arrayList1.size(); index++)
         {
