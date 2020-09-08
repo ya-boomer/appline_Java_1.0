@@ -9,11 +9,16 @@ public class ReadWriteFile {
     private static String readString;
     private static String writeString;
     private static BufferedReader br;
-
+//    BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
     {
-        try {
-            br = new BufferedReader(new FileReader("src/ReadWriteFile.txt"));
+        try (BufferedReader br = new BufferedReader(new FileReader("src/eadWriteFile.txt"))) {
+           // br = new BufferedReader(new FileReader("src/ReadWriteFile.txt"));
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e){
             e.printStackTrace();
         }
     }
@@ -30,6 +35,7 @@ public class ReadWriteFile {
 
     public static int getNumberLine(String readString) throws IOException {
         int i = 1;
+
         while ((readString = br.readLine()) != null) {
             i++;
         }
@@ -46,7 +52,9 @@ public class ReadWriteFile {
     }
 
     public static void setFileString(int i, String writeString) throws IOException {
-        FileWriter fw = new FileWriter("src/WriteFile.txt");
+        FileWriter fw = new FileWriter("src/ReadWriteFile.txt");
+        BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+        writeString = buf.readLine();
         System.out.println("Внимание! Информация будет перезаписана");
         for (int j = 0; j < i; j++) {
             writeString = writeString + "\r\n";
