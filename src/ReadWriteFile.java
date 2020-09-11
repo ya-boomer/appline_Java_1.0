@@ -7,15 +7,10 @@ import java.io.*;
  */
 public class ReadWriteFile {
     private static String readString;
-    private static BufferedReader br;
-//BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-
 
     public static void main(String[] args) throws IOException {
 
-
         // проверяем существует ли указанный файл и выводим содержимое в консоль
-
         System.out.println("Файл содержит " + getNumberLine() + " строк");
             getFileString();
             setFileString(getNumberLine());
